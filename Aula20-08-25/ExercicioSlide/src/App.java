@@ -34,7 +34,7 @@ class Circulo{
         this.raio = raio;
     }
 
-    public int getRaio() {
+    public double getRaio() {
         return raio;
     }
 
@@ -45,7 +45,7 @@ class Circulo{
     public double getComprimento() {
         return 2 * Math.PI * raio;
     }
-    
+
     @Override
     public String toString() {
         return "Comprimento: " + getComprimento() + "  " + "Area: " + getArea() + "  " + "Raio: " + getRaio(); 
