@@ -8,12 +8,11 @@ public class App {
         Circulo c1 = new Circulo();
 
         System.out.print("Digite o raio: ");
-        c1.raio = sc.nextInt();
-        c1.setRaio(c1.raio);
+        //Errado: c1.raio = sc.nextInt();
+        c1.setRaio(sc.nextDouble()); // Correto
 
-        System.out.println("Comprimento = "+c1.getComprimento());
-        System.out.println("Area  = "+c1.getArea());
-        System.out.println(c1.gettoString());
+        System.out.println("Informações do Círculo: ");
+        System.out.println(c1.toString());
 
         sc.close();
 
@@ -25,12 +24,13 @@ class Circulo{
 
     //usuário só dve mexer no raio.
 
-    protected int raio;
+    protected double raio;
 
     public Circulo() {
+        this.raio = 0.0;
     }
 
-    public void setRaio(int raio) {
+    public void setRaio(double raio) {
         this.raio = raio;
     }
 
@@ -38,9 +38,6 @@ class Circulo{
         return raio;
     }
 
-    public void setArea(int raio) {
-        this.raio = raio;
-    }
     public double getArea() {
         return Math.PI * Math.pow(raio, 2);
     }
@@ -48,8 +45,9 @@ class Circulo{
     public double getComprimento() {
         return 2 * Math.PI * raio;
     }
-
-    public String gettoString() {
+    
+    @Override
+    public String toString() {
         return "Comprimento: " + getComprimento() + "  " + "Area: " + getArea() + "  " + "Raio: " + getRaio(); 
     }
 
